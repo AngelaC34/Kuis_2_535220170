@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_riverpod/provider.dart';
+import 'package:flutter_demo_riverpod/screens/main_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class DetailScreen extends ConsumerStatefulWidget {
@@ -20,6 +21,14 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text('Detail'),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MyHomePage()));
+            setState(() {});
+          },
+          icon: Icon(Icons.arrow_back),
+        ),
       ),
       body: Center(
         child: Column(
